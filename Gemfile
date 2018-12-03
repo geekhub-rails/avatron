@@ -37,3 +37,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "cloudinary", "1.10.1.pre.rc"
+gem 'carrierwave', '~> 1.0'
+
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.1.3'

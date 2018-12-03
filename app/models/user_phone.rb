@@ -4,7 +4,7 @@ class UserPhone < ApplicationRecord
   validates :number, presence: true
 
   before_create :generate_code
-
+  has_one_attached :avatar
   def confirmed?
     code.nil?
   end
