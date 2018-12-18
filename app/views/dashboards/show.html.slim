@@ -1,18 +1,7 @@
 h1 Dashboard
 
-ul
-  - @user.avatars.each do |file|
+input#dropzone type=:file accept='image/*' name='file'
+ul data-images=true
+  - current_user.avatars.each do |ava|
     li
-      = image_tag file, size: '100'
-
-= form_for @user, url: dashboards_save_images_path, remote: true do |f|
-  = f.file_field :avatars, accept: 'image/png,image/gif,image/jpeg', multiple: true, direct_upload: true
-  = button_tag 'Ok'
-
-h1 Phone numbers
-- @user.phones
-ul
-  - @user.phones.each do |phone|
-    li
-      = phone.number
-      = link_to phone.avatar.attached? ? 'Change' : 'Add', dashboards_choose_image_path(phone), {:remote => true, 'data-toggle' => "modal", class: 'nav-link', 'data-target' => '#modal-window'}
+      img.avatar src=ava.url

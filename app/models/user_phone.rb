@@ -3,15 +3,22 @@ class UserPhone < ApplicationRecord
 
   validates :number, presence: true
 
-  before_create :generate_code
-  has_one_attached :avatar
+  after_create :generate_hash
+
+  accepts_nested_attributes_for :user
+
   def confirmed?
     code.nil?
   end
 
+  def update_code
+    update_column(:code, Rails.env.production? ? rand(1000..9999) : 1111)
+  end
+
   private
 
-  def generate_code
-    self.code = rand(1000..9999)
+  def generate_hash
+    self.md5_hash = Digest::MD5.hexdigest(self.number)
+    self.save
   end
 end

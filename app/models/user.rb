@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  has_many :phones, class_name: 'UserPhone'
-
-  accepts_nested_attributes_for :phones
-  has_many_attached :avatars
+  has_many :phones, class_name: 'UserPhone', dependent: :delete_all
+  has_many :avatars
 end

@@ -1,0 +1,5 @@
+|
+  document.getElementById('user_phone_form').innerHTML = ''
+  li = document.createElement('li')
+  li.innerHTML = '#{j(render partial: 'phone_number', object: @phone_number)}'
+  document.getElementById('user_phones').appendChild(li)

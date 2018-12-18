@@ -1,0 +1,5 @@
+h1 Add phone number to your profile
+= simple_form_for :user, method: :post, remote: true do |f|
+ = f.simple_fields_for :phones do |p|
+   = p.input :number
+ = f.submit :OK

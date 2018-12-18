@@ -1,23 +1,25 @@
+require Rails.root.join( "lib/sms_sender").to_s
 class SessionsController < ApplicationController
   def new
-    user.phones.build
   end
 
   def create
-    @user = User.joins(:phones).find_by(user_phones: { number: params[:number] })
-    @user ||= User.create(user_params)
-    if @user.valid?
-      session[:phone] = @user.phones.first.number
+    @phone = UserPhone.find_by(number: phone_params[:number])
+    @phone ||= UserPhone.create(phone_params)
+    if @phone.valid?
+      session[:phone] = @phone.number
+      @phone.update_code
+      SmsSender.new(@phone.number, @phone.code).send_sms
     else
       render(:new)
     end
   end
 
   def update
-    user = UserPhone.find_by(code: params[:code], number: session[:phone])
-    if user
-      session[:user_id] = user.user_id
-      user.update(code: nil)
+    phone = UserPhone.find_by(code: params[:code], number: session[:phone])
+    if phone
+      session[:user_id] = phone.user_id
+      phone.update(code: nil)
       redirect_to :root
     else
       render :create
@@ -29,12 +31,12 @@ class SessionsController < ApplicationController
 
   private
 
-  def user_params
-    params.fetch(:user, {}).permit(:email, phones_attributes: [:number])
+  def phone_params
+    params.require(:user_phone).permit(:number, user_attributes: [:email])
   end
 
-  def user
-    @user ||= User.new(user_params)
+  def number
+    @user ||= UserPhone.new(user_params)
   end
-  helper_method :user
+  helper_method :number
 end

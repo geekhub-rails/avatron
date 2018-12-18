@@ -17,6 +17,7 @@
 /storage/*
 !/storage/.keep
 
+.idea
 /node_modules
 /yarn-error.log
 
@@ -26,4 +27,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/.idea
+config/database.yml
