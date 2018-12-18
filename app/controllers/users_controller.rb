@@ -14,12 +14,6 @@ class UsersController < ApplicationController
     @user.update_attributes(user_params)
   end
 
-  def add_number
-    @user = current_user
-    @user.update_attributes(user_params)
-    #@user.update(phones_attributes)
-  end
-
   def show
     @user = current_user
   end

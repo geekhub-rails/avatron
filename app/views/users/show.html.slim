@@ -8,5 +8,4 @@ ul#user_phones
 #user_phone_form
 button data-url=new_phone_number_path data-remote=true Add phone
 
-/ = button_to t(:add_phone), '/profile/add_number'
-/ = button_to t(:remove_acc), '/profile', method: "delete", remote: true, data: {confirm: 'Are you sure?'}
+= button_to t(:remove_acc), '/profile', method: "delete", remote: true, data: {confirm: 'Are you sure?'}
