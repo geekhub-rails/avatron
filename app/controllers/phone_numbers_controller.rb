@@ -15,6 +15,8 @@ class PhoneNumbersController < ApplicationController
   end
 
   def destroy
+    @phone_number = current_user.phones.find_by(id: params[:id])
+    @phone_number.destroy
   end
 
   def phone_params

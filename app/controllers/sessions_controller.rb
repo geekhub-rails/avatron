@@ -41,4 +41,8 @@ class SessionsController < ApplicationController
     @phone ||= UserPhone.new(params['user_phone'])
   end
   helper_method :number
+
+  def user_params
+  params.fetch(:user, {}).permit(:email, phones_attributes: [:number])
+end
 end
