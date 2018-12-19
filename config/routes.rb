@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 	post 'profile', to: 'users#edit'
   delete 'profile', to: 'users#destroy'
   get 'profile', to: 'users#show', as: "show_profile"
+  patch 'phone_numbers', to: 'phone_numbers#update'
 
   resources :phone_numbers, only: %i[new create update destroy] do
     patch '/', to: 'phone_numbers#update', on: :collection
