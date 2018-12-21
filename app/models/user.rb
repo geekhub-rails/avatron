@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :phones, class_name: 'UserPhone', dependent: :delete_all
   has_many :avatars
-  
+
   def auto_create_gravatar
     hash = Digest::MD5.hexdigest self.email
     url = "https://www.gravatar.com/avatar/#{hash}"
@@ -14,4 +14,16 @@ class User < ApplicationRecord
       end
     end
   end
+  # private
+
+	  def validate_email
+	    self.email_confirmed = true
+	    self.confirm_token = nil
+	  end
+
+	  def set_confirmation_token
+	    if self.confirm_token.blank?
+	    	self.confirm_token = SecureRandom.urlsafe_base64.to_s
+	   	end
+   end
 end

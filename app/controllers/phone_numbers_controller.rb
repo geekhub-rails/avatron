@@ -7,9 +7,10 @@ class PhoneNumbersController < ApplicationController
       @phone_number.update_code
       SmsSender.new(@phone_number, @phone_number.code).send_sms
     else
-       render(:new)
+      current_user.phones.last.destroy
+      render(:new)
+    end
   end
-end
 
   def update
     @phones = current_user.phones.order(:id)
@@ -20,7 +21,7 @@ end
       @phone_number.update(code: nil)
       redirect_to :profile
     else
-      UserPhone.last.destroy
+      current_user.phones.last.destroy
       render :js => "alert('Wrong confirmation code'), location.reload();"
       #render :new
       #redirect_to :profile

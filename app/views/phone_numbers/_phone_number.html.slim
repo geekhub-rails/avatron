@@ -1,3 +1,3 @@
 li
-  => phone_number.number
-  button data-url=phone_number_path(phone_number) data-method=:delete data-remote=true X
+  => phone_number.number if phone_number.confirmed?
+  button data-url=phone_number_path(phone_number) data-method=:delete data-remote=true X 

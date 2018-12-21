@@ -5,6 +5,7 @@ h1= t(:profile_page)
 ul#user_phones
   = render partial: 'phone_numbers/phone_number', collection: @user.phones
 
+
 #user_phone_form
 button data-url=new_phone_number_path data-remote=true Add phone
 

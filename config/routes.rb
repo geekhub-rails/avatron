@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   resources :phone_numbers, only: %i[new create update destroy] do
     patch '/', to: 'phone_numbers#update', on: :collection
   end
+  get '/:token/confirm_email/', :to => "users#update", as: 'confirm_email'
+
   resources :avatars, only: %i[create destroy]
 end
