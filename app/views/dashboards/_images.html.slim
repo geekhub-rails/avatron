@@ -1,3 +1,7 @@
 div data-images=true
   - @avatars.each do |ava|
-    img.avatar src=ava.url
+    .avatar-container
+      button.remove
+      img.avatar src=ava.url
+  .avatar-container
+    img.avatar src="#{asset_path('00000000000000000000000000000000.jpg')}"

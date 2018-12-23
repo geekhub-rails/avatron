@@ -5,6 +5,6 @@ table
         td.phone-row
           = phone.number
         td.phone-row
-          = image_tag phone&.avatar.url, size: "50x50"
-          td.phone-row
-            = link_to 'Change', '#', {:onclick => "addAvatarToPhone(#{phone.id})", :remote => true}
+          = image_tag (phone&.avatar&.url || '00000000000000000000000000000000.jpg'), size:"50x50"
+        td.phone-row
+          = link_to 'Change', '#', {:onclick => "addAvatarToPhone(#{phone.id})", :remote => true}

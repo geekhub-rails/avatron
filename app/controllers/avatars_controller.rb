@@ -4,6 +4,7 @@ class AvatarsController < ApplicationController
     @user = current_user
     @avatars = @user.avatars
     @avatars.create(url: params[:url])
+
   end
 
   def destroy

@@ -22,9 +22,9 @@
 
 function addAvatarToPhone(phoneId) {
     const overlay = document.getElementById('overlay');
-    const images = document.getElementById('images');
+    const images = document.querySelectorAll('[data-images] > img');
 
-    const onOverlayClick = cleanUp;
+    const onOverlayClick = () => cleanUp();
 
     const onImageClick = (event) => {
         $.ajax({
@@ -34,7 +34,11 @@ function addAvatarToPhone(phoneId) {
             data: {url: event.target.getAttribute('src')},
             complete: function (res) {
                 console.log(res);
-                eval(res.responseText);
+                if (res.status === 200) {
+                    eval(res.responseText);
+                } else {
+                    console.error(res);
+                }
             }
         });
 
@@ -42,7 +46,7 @@ function addAvatarToPhone(phoneId) {
     };
 
     overlay.addEventListener('click', onOverlayClick);
-    images.addEventListener('click', onImageClick);
+    images.forEach(image => image.addEventListener('click', onImageClick));
 
     overlay.classList.add('shown');
 
@@ -50,6 +54,6 @@ function addAvatarToPhone(phoneId) {
         overlay.classList.remove('shown');
 
         overlay.removeEventListener('click', onOverlayClick);
-        images.removeEventListener('click', onImageClick);
+        images.forEach(image => image.removeEventListener('click', onImageClick));
     }
 }
