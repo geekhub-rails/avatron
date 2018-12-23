@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :session, only: %i[create update destroy]
+  resource :session, only: %i[new create update destroy]
   root 'dashboards#show'
   # namespace :api do ||
   #   get 'avatar/:hash', to: 'api#get_avatar'
@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   delete 'profile', to: 'users#destroy'
   get 'profile', to: 'users#show'
 
-  resources :phone_numbers, only: %i[create destroy]
+  resources :phone_numbers, only: %i[new create update destroy]
   resources :avatars, only: %i[create destroy]
 end

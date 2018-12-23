@@ -18,4 +18,38 @@
 //= require_tree .
 //= require activestorage
 //= require jquery3
-//= require bootstrap
+
+
+function addAvatarToPhone(phoneId) {
+    const overlay = document.getElementById('overlay');
+    const images = document.getElementById('images');
+
+    const onOverlayClick = cleanUp;
+
+    const onImageClick = (event) => {
+        $.ajax({
+            type: 'PATCH',
+            url: `/phone_numbers/${phoneId}`,
+            crossDomain: true,
+            data: {url: event.target.getAttribute('src')},
+            complete: function (res) {
+                console.log(res);
+                eval(res.responseText);
+            }
+        });
+
+        cleanUp();
+    };
+
+    overlay.addEventListener('click', onOverlayClick);
+    images.addEventListener('click', onImageClick);
+
+    overlay.classList.add('shown');
+
+    function cleanUp() {
+        overlay.classList.remove('shown');
+
+        overlay.removeEventListener('click', onOverlayClick);
+        images.removeEventListener('click', onImageClick);
+    }
+}

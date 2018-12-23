@@ -1,7 +1,9 @@
 class AvatarsController < ApplicationController
   skip_before_action :verify_authenticity_token
   def create
-    current_user.avatars.create(url: params[:url])
+    @user = current_user
+    @avatars = @user.avatars
+    @avatars.create(url: params[:url])
   end
 
   def destroy

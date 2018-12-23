@@ -1,4 +1,4 @@
-require Rails.root.join( "lib/sms_sender").to_s
+require Rails.root.join("lib/sms_sender").to_s
 class SessionsController < ApplicationController
   def new
   end
@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
   end
 
   def number
-    @user ||= UserPhone.new(user_params)
+    @phone ||= UserPhone.new(params['user_phone'])
   end
   helper_method :number
 end

@@ -4,6 +4,8 @@ class DashboardsController < ApplicationController
 
   def show
     @user = current_user
+    @avatars = current_user.avatars
+    @phones = current_user.phones
   end
 
   def update_image

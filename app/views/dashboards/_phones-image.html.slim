@@ -1,0 +1,10 @@
+table
+  tbody
+    - @phones.each do |phone|
+      tr
+        td.phone-row
+          = phone.number
+        td.phone-row
+          = image_tag phone&.avatar.url, size: "50x50"
+          td.phone-row
+            = link_to 'Change', '#', {:onclick => "addAvatarToPhone(#{phone.id})", :remote => true}
