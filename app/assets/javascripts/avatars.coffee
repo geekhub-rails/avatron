@@ -12,10 +12,11 @@ $(document).on 'change', '#dropzone', (e) ->
       src = e.target.result
       $('[data-images]').prepend("<li id='image_#{i}' class='column preloader'><img src='#{ src }' /></li>")
       $.ajax
-        url: 'https://api.cloudinary.com/v1_1/du4fm2qcv/image/upload'
+        url: 'https://api.cloudinary.com/v1_1/dfw61a6zc/image/upload'
+#        // http://res.cloudinary.com/dfw61a6zc ▼
         method: 'POST'
         crossDomain: true
-        data: {file: src, upload_preset: 'unsigned'}
+        data: {file: src, upload_preset: 'avatron_preset'}
         success: (response) ->
           $("#image_#{i}").attr('id', "image_#{response.public_id}")
           $.ajax

@@ -1,4 +1,6 @@
 class PhoneNumbersController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     @phone_number = current_user.phones.create(phone_params)
   end
@@ -7,6 +9,10 @@ class PhoneNumbersController < ApplicationController
   end
 
   def update
+    current_user.phones.find_by(id: params['id']).avatar = Avatar.find_by_url(params['url'])
+
+    @phones = current_user.phones
+    @avatars = current_user.avatars
   end
 
   def destroy
