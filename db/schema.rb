@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_23_194130) do
+ActiveRecord::Schema.define(version: 2018_12_24_172524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,9 +41,7 @@ ActiveRecord::Schema.define(version: 2018_12_23_194130) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_phone_id"
     t.index ["user_id"], name: "index_avatars_on_user_id"
-    t.index ["user_phone_id"], name: "index_avatars_on_user_phone_id"
   end
 
   create_table "user_phones", force: :cascade do |t|
@@ -53,6 +51,7 @@ ActiveRecord::Schema.define(version: 2018_12_23_194130) do
     t.string "md5_hash"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "avatar_id"
     t.index ["user_id"], name: "index_user_phones_on_user_id"
   end
 
@@ -62,7 +61,6 @@ ActiveRecord::Schema.define(version: 2018_12_23_194130) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "avatars", "user_phones"
   add_foreign_key "avatars", "users"
   add_foreign_key "user_phones", "users"
 end

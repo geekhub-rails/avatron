@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   delete 'profile', to: 'users#destroy'
   get 'profile', to: 'users#show'
 
-  resources :phone_numbers, only: %i[new create update destroy]
+  resources :phone_numbers, only: %i[new create update destroy] do
+    patch '/', to: 'phone_numbers#update', on: :collection
+  end
   resources :avatars, only: %i[create destroy]
 end

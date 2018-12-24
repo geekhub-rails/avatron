@@ -9,16 +9,19 @@ class PhoneNumbersController < ApplicationController
   end
 
   def update
-    current_user.phones.find_by(id: params['id']).avatar = Avatar.find_by_url(params['url'])
-
-    @phones = current_user.phones
-    @avatars = current_user.avatars
+    @phones = current_user.phones.order(:id)
+    return unless user_phone
+    user_phone.update(phone_params)
   end
 
   def destroy
   end
 
   def phone_params
-    params.require(:user_phone).permit(:number)
+    params.require(:user_phone).permit(:number, :avatar_id)
+  end
+
+  def user_phone
+    @user_phone ||= current_user.phones.find_by(id: params.dig(:user_phone, :id))
   end
 end

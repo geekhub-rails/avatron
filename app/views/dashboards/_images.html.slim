@@ -2,6 +2,8 @@ div data-images=true
   - @avatars.each do |ava|
     .avatar-container
       button.remove
-      img.avatar src=ava.url
+      label for="avatar_#{ava.id}"
+        img.avatar src=ava.url
+      input type='radio' onchange='Rails.fire(this.form, "submit");' name='user_phone[avatar_id]' value=ava.id id="avatar_#{ava.id}"
   .avatar-container
     img.avatar src="#{asset_path('00000000000000000000000000000000.jpg')}"

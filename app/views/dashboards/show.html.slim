@@ -1,8 +1,7 @@
 h1 Dashboard
 
 input#dropzone type=:file accept='image/*' name='file'
-#images
-  = render('images')
 
-#phones-with-images
-  = render('phones-image')
+= form_for :user_phone, url: phone_numbers_path, method: :patch, remote: true do
+  #images= render('images')
+  #phones-with-images= render('phones-image')
