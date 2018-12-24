@@ -2,21 +2,23 @@ class PhoneNumbersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    @phone_number = current_user.phones.create(phone_params)
+    @phone_number = current_user.phones.new(phone_params)
     if @phone_number.valid?
-      @phone_number.update_code
+      @phone_number.save
       SmsSender.new(@phone_number, @phone_number.code).send_sms
     else
-      current_user.phones.last.destroy
       render(:new)
     end
   end
 
-  def update
+  def updates
     @phones = current_user.phones.order(:id)
     return unless user_phone
     user_phone.update(phone_params)
-    @phone_number = UserPhone.find_by(code: params[:code])
+  end
+
+  def update
+    @phone_number = UserPhone.find_by(phone_params)
     if @phone_number
       @phone_number.update(code: nil)
       redirect_to :profile
@@ -34,7 +36,7 @@ class PhoneNumbersController < ApplicationController
   end
 
   def phone_params
-    params.require(:user_phone).permit(:number, :avatar_id)
+    params.require(:user_phone).permit(:number, :avatar_id, :code)
   end
 
   def user_phone
