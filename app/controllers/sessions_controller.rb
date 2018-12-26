@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @phone ||= UserPhone.create(phone_params)
     if @phone.valid?
       session[:phone] = @phone.number
-      @phone.update_code
+      @phone.generate_code
       SmsSender.new(@phone.number, @phone.code).send_sms
     else
       render(:new)

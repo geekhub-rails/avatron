@@ -1,4 +1,4 @@
-= simple_form_for @phone_number, url: phone_number_path(@phone_number), remote: true do |f|
+= simple_form_for @phone_number, url: '/phone_numbers', remote: true do |f|
   = f.hidden_field :number, value: params.dig(:user_phone, :number)
-  = f.input :code, value: nil
+  = f.input :code, input_html: {value: ''}
   = f.submit :OK

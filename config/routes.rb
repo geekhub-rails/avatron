@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#show', as: 'show_profile'
   patch 'phone_numbers', to: 'phone_numbers#update'
 
+  patch "/phone_numbers", to: "phone_numbers#update"
+
   resources :phone_numbers, only: %i[new create update destroy] do
     patch '/', to: 'phone_numbers#updates', on: :collection
   end

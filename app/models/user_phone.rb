@@ -12,11 +12,11 @@ class UserPhone < ApplicationRecord
     code.nil?
   end
 
-  private
-
   def generate_code
     self.code = Rails.env.production? ? rand(1000..9999) : 1111
   end
+  
+  private
 
   def generate_hash
     self.md5_hash = Digest::MD5.hexdigest(number)

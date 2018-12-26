@@ -23,10 +23,9 @@ class PhoneNumbersController < ApplicationController
       @phone_number.update(code: nil)
       redirect_to :profile
     else
-      current_user.phones.last.destroy
-      render :js => "alert('Wrong confirmation code'), location.reload();"
-      #render :new
-      #redirect_to :profile
+    # current_user.phones.last.destroy
+    # render :new
+    # redirect_to :profile
     end
   end
 
