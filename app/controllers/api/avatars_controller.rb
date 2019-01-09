@@ -15,7 +15,7 @@ class Api::AvatarsController < ActionController::Base
       else
         file = open(avatar.url).read
       end
-      send_data file, type: 'image/jpg', disposition: 'inline'
+      send_data file, type: 'image/png', disposition: 'inline'
     else
       render :json => {status: 404, message: 'not found'}
     end

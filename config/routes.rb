@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :session
+  resource :session, only: %i[create update destroy]
   root 'dashboards#show'
   get '/api/:hash', to: 'api/avatars#show'
 

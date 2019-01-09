@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-  before_action :require_user
+  before_action
 
   def show
   end
