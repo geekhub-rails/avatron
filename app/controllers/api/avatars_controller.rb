@@ -3,7 +3,7 @@ require 'open-uri'
 class Api::AvatarsController < ActionController::Base
   respond_to? :json
   Mime::Type.register "image/jpg", :jpg
-  caches_action :show
+  caches_page :show
 
   def show
     user_phone = UserPhone.find_by(md5_hash: params[:hash])
