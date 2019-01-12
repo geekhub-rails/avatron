@@ -1,5 +1,6 @@
 class UserPhone < ApplicationRecord
   belongs_to :user
+  belongs_to :avatar
 
   validates :number, presence: true
 

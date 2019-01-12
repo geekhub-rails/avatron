@@ -1,7 +1,7 @@
 h1 Dashboard
 
 input#dropzone type=:file accept='image/*' name='file'
-ul data-images=true
-  - current_user.avatars.each do |ava|
-    li
-      img.avatar src=ava.url
+
+= form_for :user_phone, url: phone_numbers_path, method: :patch, remote: true do
+  #images= render('images')
+  #phones-with-images= render('phones-image')

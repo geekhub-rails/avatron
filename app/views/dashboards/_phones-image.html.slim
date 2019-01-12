@@ -1,0 +1,11 @@
+table
+  tbody
+    - @phones.each do |phone|
+      tr
+        td.phone-row
+          = phone.number
+          input type=:radio name="user_phone[id]" value=phone.id id="user_phone_#{phone.id}"
+        td.phone-row
+          = image_tag (phone&.avatar&.url || '00000000000000000000000000000000.jpg'), size:"50x50"
+        td.phone-row
+          label for="user_phone_#{phone.id}" Change
