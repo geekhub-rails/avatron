@@ -1,0 +1,56 @@
+body{
+  background-color: #091823;
+  color: #dddddd;
+}
+#left-triangle-bar{
+  position: fixed;
+  top: 40px;
+  left: 0;
+}
+.container{
+  margin-top: 60px;
+  text-align: center;
+  #logo{
+    img{
+      height: 30px;
+    }
+  }
+  
+}
+#triangle1{
+  background-image: url('/Assets/leftdark.svg');
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+}
+#triangle2{
+  background-image: url('/Assets/leftorange1.svg');
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+}
+#triangle3{
+  background-image: url('/Assets/leftblue1.svg');
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+}
+#triangle4{
+  background-image: url('/Assets/leftgrey.svg');
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 110px;
+}
+#triangle5{
+  background-image: url('/Assets/leftblue2.svg');
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+}
+#triangle6{ 
+  margin-left: 100px;
+  background-image: url('/Assets/leftorange2.svg');
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+}

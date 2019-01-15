@@ -7,7 +7,28 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'main'
   body
-    = yield
+    .row
+      .col-sm-3
+        #left-triangle-bar
+          #triangle1           
+          #triangle2          
+          #triangle3
+          #triangle4
+          #triangle5
+          #triangle6
+      .col-sm-6
+        .container
+          #logo
+            img src='/Assets/AvATRON.svg'
+          = yield
+      .col-sm-3
+        .triangle
+        .triangle
+        .triangle
+        .triangle
+        .triangle
+        .triangle
     #modal-window.modal.hide.fade aria-hidden="true" role="dialog"
     #overlay

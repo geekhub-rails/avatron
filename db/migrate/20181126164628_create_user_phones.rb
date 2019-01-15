@@ -5,7 +5,7 @@ class CreateUserPhones < ActiveRecord::Migration[5.2]
       t.string :number
       t.string :code
       t.string :md5_hash
-
+      
       t.timestamps
     end
   end
