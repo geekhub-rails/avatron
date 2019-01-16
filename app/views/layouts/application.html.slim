@@ -9,15 +9,24 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'main'
   body
+    #left-triangle-bar
+      #triangle1           
+      #triangle2          
+      #triangle3
+      #triangle4
+      #triangle5
+      #triangle6
+    #right-triangle-bar
+      #triangle7          
+      #triangle8          
+      #triangle9
+      #triangle10
+      #triangle11
+      #triangle12
+      
     .row
       .col-sm-3
-      #left-triangle-bar
-        #triangle1           
-        #triangle2          
-        #triangle3
-        #triangle4
-        #triangle5
-        #triangle6
+     
       .col-sm-6
         .container
           #logo
@@ -25,18 +34,16 @@ html
           = yield
           .footer
             | &copy; avatron.com
+
       .col-sm-3
         .nav
-          a href='#' Home
-          a href='#' Profile
-          a href='#' Logout
-    #right-triangle-bar
-        #triangle7          
-        #triangle8          
-        #triangle9
-        #triangle10
-        #triangle11
-        #triangle12
+          a href=  root_path 
+            | Home
+          a href= show_profile_path 
+            | Profile
+          a href= session_path data-method="delete"
+            | Logout
+
     #modal-window.modal.hide.fade aria-hidden="true" role="dialog"
     #overlay
 
