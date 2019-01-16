@@ -7,13 +7,24 @@ body{
   top: 40px;
   left: 0;
 }
+#right-triangle-bar{
+  position: fixed;
+  top: 120px;
+  text-align: right;
+  width: 100%;
+}
 .container{
-  margin-top: 60px;
+  margin-top: 50px;
   text-align: center;
   #logo{
     img{
       height: 30px;
     }
+  }
+  h1{
+    font-size: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   
 }
@@ -48,9 +59,93 @@ body{
   height: 150px;
 }
 #triangle6{ 
-  margin-left: 100px;
-  background-image: url('/Assets/leftorange2.svg');
+  margin-left: 79px;
+  background-image: url(/Assets/leftorange2.svg);
   background-repeat: no-repeat;
   width: 70px;
   height: 70px;
+  margin-top: -47px;
+}
+#triangle7{
+  background-image: url('/Assets/rightorange1.svg');
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+}
+#triangle8{
+  background-image: url('/Assets/rightgrey1.svg');
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+}
+#triangle9{
+  background-image: url('/Assets/rightblue.svg');
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+}
+#triangle10{
+  background-image: url('/Assets/rightorange2.svg');
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+}
+#triangle11{
+  background-image: url('/Assets/rightgrey2.svg');
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+}
+#triangle12{ 
+  margin-left: 79px;
+  background-image: url(/Assets/rightdark.svg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  margin-top: -47px;
+}
+
+.nav{
+  position: fixed;
+}
+
+a{
+  margin-right: 20px;
+  margin-top: 60px;
+  text-decoration: none;
+  color: #dddddd;
+  font-size: 15px;
+}
+
+.avatar-container{
+  width:100px;
+  height: 100px;
+  border: 1px solid  #dddddd;
+  margin-bottom: 20px;
+  img{
+    max-width: 97px;
+    max-height: 97px;
+  }
+  input[type="radio"]{
+    display: none;
+  }
+ 
+}
+
+.phone-picture{
+  border: 1px solid  #dddddd;
+}
+
+.button{
+  width: 100%;
+  background-color: #ec991f;
+}
+
+#drop{
+  border: 1px solid #dddddd;
+  padding: 15px;
+  #smalldrop{
+    border: 1px dashed #dddddd;
+    padding: 80px;
+  }
 }
