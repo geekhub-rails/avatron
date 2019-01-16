@@ -6,7 +6,7 @@
           = phone.number
           input type=:radio name="user_phone[id]" value=phone.id id="user_phone_#{phone.id}"
         td.phone-row
-          = image_tag (phone&.avatar&.url || '00000000000000000000000000000000.jpg'), width:"50"
+          = image_tag (phone&.avatar&.url || '0.jpg'), width:"50"
         td.phone-row
           label for="user_phone_#{phone.id}" Change
 
@@ -18,7 +18,8 @@
           = phone.number
           input type=:radio name="user_phone[id]" value=phone.id id="user_phone_#{phone.id}"
         .col-sm-4
-          = image_tag (phone&.avatar&.url || '00000000000000000000000000000000.jpg'), width:"50"
+          .small-picture
+            = image_tag (phone&.avatar&.url || '0.jpg')
         .col-sm-4
           .button
             label for="user_phone_#{phone.id}" Change

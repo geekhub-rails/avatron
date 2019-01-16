@@ -127,7 +127,7 @@ a{
     max-height: 97px;
   }
   input[type="radio"]{
-    display: none;
+  //  display: none;
   }
  
 }
@@ -147,5 +147,15 @@ a{
   #smalldrop{
     border: 1px dashed #dddddd;
     padding: 80px;
+  }
+}
+
+.small-picture{
+  width:50px;
+  height: 50px;
+  border: 1px solid  #dddddd;
+  img{
+    max-width: 48px;
+    max-height: 48px;
   }
 }
