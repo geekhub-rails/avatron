@@ -10,10 +10,10 @@
         ul
           - @user.avatars.each do |file|
             li
-            = image_tag file
+            = image_tag file, size: '100'
             = file.id
             = f.button :OK, value: file.id, data: {avatar: file}, class: 'btn btn-primary'
-              / = link_to (image_tag file), onchange: "this.setAttribute('data-params', 'user[avtart]=' )", data: {url: root_path(user), remote: true, method: :patch}
+              / = link_to (image_tag file, size: '100'), onchange: "this.setAttribute('data-params', 'user[avtart]=' )", data: {url: root_path(user), remote: true, method: :patch}
 
       .modal-footer
         / = f.button :OK, class: 'btn btn-primary'

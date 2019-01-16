@@ -118,16 +118,16 @@ a{
 }
 
 .avatar-container{
-  width:100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border: 1px solid  #dddddd;
   margin-bottom: 20px;
   img{
-    max-width: 97px;
-    max-height: 97px;
+    max-width: 87px;
+    max-height: 87px;
   }
   input[type="radio"]{
-  //  display: none;
+    display: none;
   }
  
 }
@@ -139,23 +139,34 @@ a{
 .button{
   width: 100%;
   background-color: #ec991f;
+  color: black;
+  outline: none;
+  border: none; 
+  height: 100%;
+  padding-top: 3px;
 }
 
 #drop{
   border: 1px solid #dddddd;
   padding: 15px;
+  margin-bottom: 60px;
   #smalldrop{
     border: 1px dashed #dddddd;
-    padding: 80px;
+    padding: 70px;
   }
 }
 
 .small-picture{
-  width:50px;
-  height: 50px;
-  border: 1px solid  #dddddd;
+  height: 35px;
+  width: 35px;
+  border-left: 1px solid  #dddddd;
+  border-right: 1px solid  #dddddd;
   img{
-    max-width: 48px;
-    max-height: 48px;
+    max-height: 33px;
+    max-width: 33px;
   }
+}
+
+.footer{
+  margin: 60px;
 }
