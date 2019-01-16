@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
   private
 
   def phone_params
-    params.require(:user_phone).permit(:number, user_attributes: [:email])
+    params.fetch(:user_phone, {}).permit(:number, user_attributes: [:email])
   end
 
   def number
