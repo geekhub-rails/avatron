@@ -1,5 +1,9 @@
 = simple_form_for number, url: session_path, remote: true do |f|
+  #number
+    | phone
   = f.input :number
   = f.fields_for :user, User.new do |p|
-    = p.input :email
-  = f.submit :OK
+    #email
+      | email
+    = p.input :email, label: nil
+  = f.submit :CONFIRM
