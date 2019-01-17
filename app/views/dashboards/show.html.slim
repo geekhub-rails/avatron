@@ -1,7 +1,14 @@
-h1 Dashboard
+h1 DASHBOARD
 
-input#dropzone type=:file accept='image/*' name='file'
+.row
+  .col-sm-3
+    = form_for :user_phone, url: phone_numbers_path, method: :patch, remote: true do
+      #images= render('images')
 
-= form_for :user_phone, url: phone_numbers_path, method: :patch, remote: true do
-  #images= render('images')
-  #phones-with-images= render('phones-image')
+
+  .col-sm-9
+    #drop
+      #smalldrop
+        input#dropzone type=:file accept='image/*' name='file'
+#phones-with-images= render('phones-image') 
+

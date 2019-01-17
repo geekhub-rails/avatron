@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       @phone.update_code
       SmsSender.new(@phone.number, @phone.code).send_sms
     else
+      binding.pry
       render(:new)
     end
   end
@@ -27,6 +28,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil  
+    redirect_to :root
   end
 
   private

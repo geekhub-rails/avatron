@@ -1,0 +1,253 @@
+body{
+  background-color: #091823;
+  color: #dddddd;
+}
+#left-triangle-bar{
+  position: fixed;
+  top: 40px;
+  left: 0;
+}
+#right-triangle-bar{
+  position: fixed;
+  top: 120px;
+  text-align: right;
+  width: 100%;
+}
+.container{
+  margin-top: 50px;
+  text-align: center;
+  #logo{
+    img{
+      height: 30px;
+    }
+  }
+  h1{
+    font-size: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+}
+#triangle1{
+  background-image: url('/Assets/leftdark.svg');
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left:0;
+}
+#triangle2{
+  background-image: url('/Assets/leftorange1.svg');
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 120px;
+  left:0;
+}
+#triangle3{
+  background-image: url('/Assets/leftblue1.svg');
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 190px;
+  left:0;
+}
+#triangle4{
+  background-image: url('/Assets/leftgrey.svg');
+  background-repeat: no-repeat;
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  top: 260px;
+  left:0;
+}
+#triangle5{
+  background-image: url('/Assets/leftblue2.svg');
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 340px;
+  left:0;
+}
+#triangle6{ 
+  background-image: url(/Assets/leftorange2.svg);
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 440px;
+  left: 78px;
+}
+#triangle7{
+  background-image: url('/Assets/rightorange1.svg');
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right:0;  
+}
+#triangle8{
+  background-image: url('/Assets/rightgrey1.svg');
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 70px;
+  right: 0;
+}
+#triangle9{
+  background-image: url('/Assets/rightblue.svg');
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 170px;
+  right: 30px;
+}
+#triangle10{
+  background-image: url('/Assets/rightorange2.svg');
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 220px;
+  right: 0;
+}
+#triangle11{
+  background-image: url('/Assets/rightgrey2.svg');
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 270px;
+  right: 30px;
+}
+#triangle12{ 
+  margin-left: 79px;
+  background-image: url(/Assets/rightdark.svg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 340px;
+  right:0;
+}
+
+.nav{
+  position: fixed;
+}
+
+a{
+  margin-right: 20px;
+  margin-top: 60px;
+  text-decoration: none;
+  color: #dddddd;
+  font-size: 15px;
+}
+
+.avatar-container{
+  width: 90px;
+  height: 90px;
+  border: 1px solid  #dddddd;
+  margin-bottom: 20px;
+  img{
+    max-width: 87px;
+    max-height: 87px;
+  }
+  input[type="radio"]{
+    display: none;
+  }
+ 
+}
+
+.phone-picture{
+  border: 1px solid  #dddddd;
+}
+
+.button{
+  width: 100%;
+  background-color: #ec991f;
+  color: black;
+  outline: none;
+  border: none; 
+  height: 100%;
+  padding-top: 3px;
+}
+
+#drop{
+  border: 1px solid #dddddd;
+  padding: 15px;
+  margin-bottom: 60px;
+  #smalldrop{
+    border: 1px dashed #dddddd;
+    padding: 70px;
+  }
+}
+
+.small-picture{
+  height: 35px;
+  width: 35px;
+  border-left: 1px solid  #dddddd;
+  border-right: 1px solid  #dddddd;
+  img{
+    max-height: 33px;
+    max-width: 33px;
+  }
+}
+
+.footer{
+  margin: 60px;
+}
+
+#right-inner-bar{
+  position: relative;
+}
+
+#face{
+  margin-top: 40px;
+  img{
+    width: 80px;
+
+  }
+}
+
+#ass{
+  margin-top: 40px;
+  font-size: 15px;
+}
+.string{
+  width: 100%;
+  color:#dddddd;
+  border: 1px solid  #dddddd;
+  background: #091823;
+  margin-bottom: 20px;
+  height: 20px;
+}
+.login{
+  background:#dddddd;
+  color: black;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 3px;
+  padding-top: 1px;
+}
+
+#confirm-login{
+  width: 100%;
+  height: 30px;
+  font-size: 13px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-weight: bold;
+  background:#dddddd;
+}
+#phone-text{
+  background:#ec991f;
+}
+#user_phone_user_attributes_email{
+  border: 1px solid #ec991f;
+}

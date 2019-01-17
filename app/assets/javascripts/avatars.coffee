@@ -25,7 +25,8 @@ $(document).on 'change', '#dropzone', (e) ->
             data: { url: response.url, public_id: response.public_id }
             dataType: 'script'
             complete: (res) ->
-              eval(res)
+              console.log(res)
+              # eval(res)
               $("#image_#{response.public_id}").hide()
     reader.readAsDataURL(file)
 

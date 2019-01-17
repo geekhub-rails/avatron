@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2018_12_24_172524) do
     t.bigint "user_id"
     t.string "number"
     t.string "code"
-    t.string "md5_hash"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "avatar_id"
