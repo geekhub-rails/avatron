@@ -1,9 +1,25 @@
 = simple_form_for number, url: session_path, remote: true do |f|
-  #number
-    | phone
-  = f.input :number
+  .row
+    .col-sm-1
+    .col-sm-2
+      .login
+        |* Phone
+    .col-sm-8  
+      input class="string required" name="user_phone[number]" value=params.dig(:user_phone, :number) required="required"aria-required="true" type="text"  id="user_phone_number" 
+    .col-sm-1
   = f.fields_for :user, User.new do |p|
-    #email
-      | email
-    = p.input :email, label: nil
-  = f.submit :CONFIRM
+  .row
+    .col-sm-1
+    .col-sm-2
+      .login#phone-text
+        |Email
+    .col-sm-8
+      input class="string email optional" value=params.dig(:user_phone, :email) type="email" name="user_phone[user_attributes][email]" id="user_phone_user_attributes_email"
+    .col-sm-1
+  br
+  .row
+    .col-sm-1
+    .col-sm-10
+      = f.submit :CONFIRM, id: 'confirm-login'
+    .col-sm-1
+  

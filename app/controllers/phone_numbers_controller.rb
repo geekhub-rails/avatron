@@ -10,10 +10,8 @@ class PhoneNumbersController < ApplicationController
 
   def update
     @phones = current_user.phones.order(:id)
-    binding.pry
     return unless user_phone
     user_phone.update(phone_params)
-    puts user_phone.errors.inspect
   end
 
   def destroy

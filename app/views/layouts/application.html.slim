@@ -36,13 +36,14 @@ html
             | &copy; avatron.com
 
       .col-sm-3
-        .nav
-          a href=  root_path 
-            | Home
-          a href= show_profile_path 
-            | Profile
-          a href= session_path data-method="delete"
-            | Logout
+        -if current_user
+          .nav
+            a href=  root_path 
+              | Home
+            a href= show_profile_path 
+              | Profile
+            a href= session_path data-method="delete"
+              | Logout
 
     #modal-window.modal.hide.fade aria-hidden="true" role="dialog"
     #overlay
