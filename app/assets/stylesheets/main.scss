@@ -1,7 +1,19 @@
 body{
   background-color: #091823;
-  color: #dddddd;
+  color: #dddddd; 
+  font-family: FontBold;
 }
+
+@font-face {
+  font-family: FontLight;
+  src: url('/FontLight.otf') format("opentype");
+}
+
+@font-face {
+  font-family: FontBold;
+  src: url('/FontBold.otf') format("opentype");
+}
+
 #left-triangle-bar{
   position: fixed;
   top: 40px;
@@ -146,6 +158,9 @@ a{
   text-decoration: none;
   color: #dddddd;
   font-size: 15px;
+  &:hover{
+    color:#ec991f;
+  }
 }
 
 .avatar-container{
@@ -225,6 +240,7 @@ a{
   background: #091823;
   margin-bottom: 20px;
   height: 20px;
+  padding-left: 5px;
 }
 .login{
   background:#dddddd;
