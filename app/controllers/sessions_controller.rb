@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
       @phone.update_code
       SmsSender.new(@phone.number, @phone.code).send_sms
     else
-      binding.pry
       render(:new)
     end
   end
