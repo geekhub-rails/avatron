@@ -180,7 +180,7 @@ a{
 }
 
 .phone-picture{
-  border: 1px solid  #dddddd;
+  padding-bottom: 40px;
 }
 
 .button{
@@ -206,8 +206,7 @@ a{
 .small-picture{
   height: 35px;
   width: 35px;
-  border-left: 1px solid  #dddddd;
-  border-right: 1px solid  #dddddd;
+  border-right: 1px solid #dddddd;  
   img{
     max-height: 33px;
     max-width: 33px;
@@ -267,4 +266,29 @@ a{
 }
 .orange{
   border: 1px solid #ec991f;
+}
+.cont{
+  float: left;
+  height: 35px;
+}
+.small-cont{
+  margin-bottom: 20px;
+  padding: 4px;
+  overflow: hidden;
+}
+.phone-cont{
+  width:30%;
+  border: 1px solid #dddddd;
+
+}
+
+.picture-cont{
+  width:20%;
+  border: 1px solid #dddddd;
+  border-right: none;
+  border-left:none;
+}
+
+.button-cont{
+  width:50%;
 }
