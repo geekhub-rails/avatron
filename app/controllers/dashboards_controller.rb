@@ -6,6 +6,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @avatars = current_user.avatars
     @phones = current_user.phones
+    @user.auto_create_gravatar
   end
 
   def update_image
