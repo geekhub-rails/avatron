@@ -1,7 +1,19 @@
 body{
   background-color: #091823;
-  color: #dddddd;
+  color: #dddddd; 
+  font-family: FontBold;
 }
+
+@font-face {
+  font-family: FontLight;
+  src: url('/FontLight.otf') format("opentype");
+}
+
+@font-face {
+  font-family: FontBold;
+  src: url('/FontBold.otf') format("opentype");
+}
+
 #left-triangle-bar{
   position: fixed;
   top: 40px;
@@ -146,6 +158,9 @@ a{
   text-decoration: none;
   color: #dddddd;
   font-size: 15px;
+  &:hover{
+    color:#ec991f;
+  }
 }
 
 .avatar-container{
@@ -225,6 +240,7 @@ a{
   background: #091823;
   margin-bottom: 20px;
   height: 20px;
+  padding-left: 5px;
 }
 .login{
   background:#dddddd;
@@ -236,7 +252,7 @@ a{
   padding-top: 1px;
 }
 
-#confirm-login{
+.confirm-login-btn{
   width: 100%;
   height: 30px;
   font-size: 13px;
@@ -245,9 +261,9 @@ a{
   font-weight: bold;
   background:#dddddd;
 }
-#phone-text{
+.phone-text{
   background:#ec991f;
 }
-#user_phone_user_attributes_email{
+.orange{
   border: 1px solid #ec991f;
 }

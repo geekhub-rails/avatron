@@ -19,7 +19,8 @@ class UserPhone < ApplicationRecord
   private
 
   def generate_hash
-    self.md5_hash = Digest::MD5.hexdigest(self.number)
+    # TODO: fix migration
+    # self.md5_hash = Digest::MD5.hexdigest(self.number)
     self.save
   end
 end
