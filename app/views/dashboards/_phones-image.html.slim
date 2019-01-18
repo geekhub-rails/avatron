@@ -19,7 +19,7 @@
           input type=:radio name="user_phone[id]" value=phone.id id="user_phone_#{phone.id}"
         .col-sm-2
           .small-picture
-            = image_tag (phone&.avatar&.url || '0.jpg')
+            = image_tag (phone&.avatar&.url || '/Assets/face.svg')
         .col-sm-6
           .button
             label for="user_phone_#{phone.id}" Change
