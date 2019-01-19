@@ -1,12 +1,12 @@
 h1 DASHBOARD
 
-.row
+.dashboard-cont
   = form_for :user_phone, url: phone_numbers_path, method: :patch, remote: true do
-    .col-sm-3
+    .big-img-cont
       #images= render('images')
 
 
-    .col-sm-9
+    .dropzone-cont
       #drop
         #smalldrop
           input#dropzone type=:file accept='image/*' name='file'
