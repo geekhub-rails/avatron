@@ -8,5 +8,8 @@ class AvatarsController < ApplicationController
   end
 
   def destroy
+    avatar = Avatar.find(params[:id])
+    avatar.destroy
+    redirect_to :root
   end
 end
