@@ -29,6 +29,11 @@ class PhoneNumbersController < ApplicationController
     end
   end
 
+  def confirm_number
+    @phone_number = UserPhone.find_by(id: params[:id])
+    render :confirm_number
+  end
+
   def destroy
     @phone_number = current_user.phones.find_by(id: params[:id])
     @phone_number.destroy

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   patch 'phone_numbers', to: 'phone_numbers#update'
 
   patch "/phone_numbers", to: "phone_numbers#update"
+  patch "/phone_numbers/:id", to: "phone_numbers#confirm_number"
 
   resources :phone_numbers, only: %i[new create update destroy] do
     patch '/', to: 'phone_numbers#updates', on: :collection
