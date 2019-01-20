@@ -1,10 +1,13 @@
 div data-images=true
   - @avatars.each do |ava|
     .avatar-container
-      a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
-        | &cross;
+      - is_gravatar = ava.url.include?("gravatar")
+      - unless is_gravatar
+        a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
+          | &cross;
       label for="avatar_#{ava.id}"
-        img.avatar src=ava.url
+        - title = is_gravatar ? "loaded from gravatar" : ""
+        img.avatar src=ava.url title=title
       input[type='radio' 
             onchange='Rails.fire(this.form, "submit");' 
             name='user_phone[avatar_id]' 
