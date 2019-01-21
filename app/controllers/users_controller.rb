@@ -5,19 +5,22 @@ class UsersController < ApplicationController
 
   def create
   end
-
-  def update
-  end
-
+  
   def edit
     @user = current_user
-    @user.update_attributes(user_params)
+    @user.update(new_email: user_params[:email])
+    @user.set_confirmation_token
+    @user.save(validate: false)
+    UserMailer.confirm_email(@user).deliver_now
+    render :js => "alert('Please confirm your email');"
   end
 
-  def add_number
-    @user = current_user
-    @user.update_attributes(user_params)
-    #@user.update(phones_attributes)
+  def update
+    @user = User.find_by_confirm_token(params[:token])
+    @user.update(email: @user.new_email, new_email: nil)
+    @user.validate_email
+    @user.save(validate: false)
+    redirect_to :profile
   end
 
   def show
@@ -29,7 +32,6 @@ class UsersController < ApplicationController
     reset_session
     redirect_to :root
   end
-
 end
 
 private

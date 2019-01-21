@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 2018_12_24_172524) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "email_confirmed", default: false
+    t.string "confirm_token"
+    t.string "new_email"
   end
 
   add_foreign_key "avatars", "users"

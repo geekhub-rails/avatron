@@ -1,3 +1,4 @@
+require Rails.root.join( "lib/sms_sender").to_s
 class ApplicationController < ActionController::Base
   layout 'application'
 
