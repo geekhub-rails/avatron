@@ -7,7 +7,7 @@ class Api::AvatarsController < ActionController::Base
 
   def show
     user_phone = UserPhone.find_by(md5_hash: params[:hash])
-    avatar = Avatar.find_by(user_id: user_phone && user_phone.user_id)
+    avatar = user_phone&.avatar
     if avatar
       size = params['size'] || params['s']
       if size
@@ -17,7 +17,8 @@ class Api::AvatarsController < ActionController::Base
       end
       send_data file, type: 'image/png', disposition: 'inline'
     else
-      render :json => {status: 404, message: 'not found'}
+      file = open('https://i.imgur.com/Ur1pWL4.png').read
+      send_data file, type: 'image/png', disposition: 'inline'
     end
   end
 end
