@@ -31,6 +31,8 @@ class PhoneNumbersController < ApplicationController
 
   def confirm_number
     @phone_number = UserPhone.find_by(id: params[:id])
+    @phone_number.generate_code
+    SmsSender.new(@phone_number, @phone_number.code).send_sms
     render :confirm_number
   end
 
