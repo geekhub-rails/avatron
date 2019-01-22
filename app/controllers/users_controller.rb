@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     @user.set_confirmation_token
     @user.save(validate: false)
     UserMailer.confirm_email(@user).deliver_now
-    render :js => "alert('Please confirm your email');"
   end
 
   def update
