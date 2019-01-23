@@ -2,7 +2,9 @@ class UserPhone < ApplicationRecord
   belongs_to :user
   belongs_to :avatar, optional: true
 
-  validates :number, presence: true
+  number_regex = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/
+  validates :number, presence: true, length: { minimum: 4 }
+  validates_format_of :number, :with =>  number_regex, :message => "Please enter a valid phone"
 
   before_create :generate_hash, :generate_code
 
