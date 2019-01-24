@@ -32,9 +32,10 @@
 en:
   hello: "Hello world"
   edit_email: "Edit email"
-  add_phone: "Add another phone number"
+  add_phone: "➕ Add another phone number"
   remove_acc: "Remove account"
-  profile_page: "Your profile"
+  profile_page: "YOUR PROFILE"
   profile: "Profile"
   confirm: "Confirm"
   not_confirmed: "Number is not confirmed"
+  
