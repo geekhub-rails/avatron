@@ -16,11 +16,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_confirm_token(params[:token])
-    @user.update(email: @user.new_email, new_email: nil)
-    @user.validate_email
-    @user.save(validate: false)
+    @user.confirm_new_email
     redirect_to :profile
   end
+
 
   def show
     @user = current_user
