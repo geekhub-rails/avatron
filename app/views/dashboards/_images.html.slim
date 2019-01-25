@@ -4,7 +4,7 @@ div data-images=true
       - is_gravatar = ava.url.include?("gravatar")
       - unless is_gravatar
         a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
-          | &cross;
+          | x
       label for="avatar_#{ava.id}"
         - title = is_gravatar ? "loaded from gravatar" : ""
         img.avatar src=ava.url title=title

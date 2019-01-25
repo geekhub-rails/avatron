@@ -3,6 +3,7 @@ body{
   color: #dddddd; 
   font-family: FontBold;
   overflow-x: hidden;
+  min-width: 1000px;
 }
 
 @font-face {
@@ -29,6 +30,7 @@ body{
 .container{
   margin-top: 50px;
   text-align: center;
+  min-width: 400px;
   #logo{
     img{
       height: 30px;
@@ -208,7 +210,19 @@ a{
   width: 100%;
   #smalldrop{
     border: 1px dashed #dddddd;
-    padding: 70px;
+    width: 100%;
+    background-image:url("data:image/svg+xml;utf8,
+                          <svg xmlns='http://www.w3.org/2000/svg' version='1.1'
+                          height='200px' width='500px' >
+                          <text x='85' y='85' fill='#dddddd' font-size='50' font-family='FontBold'>+</text>
+                          <text x='120' y='75' fill='#dddddd' font-size='20' font-family='Tahoma'>Add another avatar</text>
+                          <text x='110' y='100' fill='#dddddd' font-size='15'>Drag and drop or tap your image here</text>
+                          </svg>");
+    #dropzone{
+      width: 100%;
+      opacity: 0;
+      padding: 70px;
+    }
   }
 }
 
