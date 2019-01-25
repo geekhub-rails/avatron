@@ -11,17 +11,21 @@ class UsersController < ApplicationController
     @user.update(new_email: user_params[:email])
     @user.set_confirmation_token
     @user.save(validate: false)
-    UserMailer.confirm_email(@user).deliver_now
-    render :js => "alert('Please confirm your email');"
+    unless Rails.env.development?
+      UserMailer.confirm_email(@user).deliver_now
+      render :js => "alert('Please confirm your email');"
+    else
+      @user.confirm_new_email
+      redirect_to :profile
+    end
   end
 
   def update
     @user = User.find_by_confirm_token(params[:token])
-    @user.update(email: @user.new_email, new_email: nil)
-    @user.validate_email
-    @user.save(validate: false)
+    @user.confirm_new_email
     redirect_to :profile
   end
+
 
   def show
     @user = current_user
