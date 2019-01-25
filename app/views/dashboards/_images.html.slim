@@ -1,7 +1,8 @@
 div data-images=true
-  - @avatars.each do |ava|
-    .avatar-container
-      - is_gravatar = ava.url.include?("gravatar")
+  .avatar-container
+    img.avatar src="#{asset_path('/Assets/face.svg')}"
+    -ava = @avatars.first 
+    - is_gravatar = ava.url.include?("gravatar")
       - unless is_gravatar
         a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
           | x
@@ -12,5 +13,18 @@ div data-images=true
             onchange='Rails.fire(this.form, "submit");' 
             name='user_phone[avatar_id]' 
             value=ava.id id="avatar_#{ava.id}"]
-  .avatar-container
-    img.avatar src="#{asset_path('/Assets/face.svg')}"
+  #big_cont
+    - @avatars[1..-1].each do |ava|
+      .avatar-container
+        - is_gravatar = ava.url.include?("gravatar")
+        - unless is_gravatar
+          a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
+            | &cross;
+        label for="avatar_#{ava.id}"
+          - title = is_gravatar ? "loaded from gravatar" : ""
+          img.avatar src=ava.url title=title
+        input[type='radio' 
+              onchange='Rails.fire(this.form, "submit");' 
+              name='user_phone[avatar_id]' 
+              value=ava.id id="avatar_#{ava.id}"]
+
