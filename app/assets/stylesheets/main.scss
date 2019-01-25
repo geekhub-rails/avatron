@@ -170,7 +170,7 @@ a{
   width: 90px;
   height: 90px;
   border: 1px solid  #dddddd;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
   img{
     max-width: 87px;
     max-height: 87px;
@@ -182,6 +182,11 @@ a{
 }
 #big_cont{
   width: 100%;
+  text-align: left;  
+
+}
+.down-cont{
+  margin-bottom: 20px;
 }
 
 .phone-picture{
@@ -197,10 +202,15 @@ a{
   height: 100%;
   padding-top: 3px;
 }
-.big-img-cont{
+#big-img-cont{
   float: left;
   width: 20%;
   text-align: left;
+  padding-bottom: 20px;
+
+}
+.right-cont{
+  margin-right: 20px;
 }
 .dropzone-cont{
   float: left;

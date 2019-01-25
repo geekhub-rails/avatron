@@ -1,14 +1,15 @@
+= content_for :drop
+  .dropzone-cont
+    #drop
+      #smalldrop
+        input#dropzone type=:file accept='image/*' name='file'
+  
+
 h1 DASHBOARD
 
 .dashboard-cont
   = form_for :user_phone, url: phone_numbers_path, method: :patch, remote: true do
     .big-img-cont
       #images= render('images')
-
-
-    .dropzone-cont
-      #drop
-        #smalldrop
-          input#dropzone type=:file accept='image/*' name='file'
-    #phones-with-images= render('phones-image')
-
+      
+#phones-with-images= render('phones-image')

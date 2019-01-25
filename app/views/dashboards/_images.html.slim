@@ -1,25 +1,30 @@
 div data-images=true
-  .avatar-container
-    img.avatar src="#{asset_path('/Assets/face.svg')}"
-    -ava = @avatars.first 
-    - is_gravatar = ava.url.include?("gravatar")
-      - unless is_gravatar
-        a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
-          | x
-      label for="avatar_#{ava.id}"
-        - title = is_gravatar ? "loaded from gravatar" : ""
-        img.avatar src=ava.url title=title
-      input[type='radio' 
-            onchange='Rails.fire(this.form, "submit");' 
-            name='user_phone[avatar_id]' 
-            value=ava.id id="avatar_#{ava.id}"]
-  #big_cont
-    - @avatars[1..-1].each do |ava|
-      .avatar-container
+  #big-img-cont
+    .avatar-container.down-cont
+      img.avatar src="#{asset_path('/Assets/face.svg')}"
+
+    -ava = @avatars.to_a.first
+    -if ava
+     .avatar-container.down-cont  
         - is_gravatar = ava.url.include?("gravatar")
         - unless is_gravatar
           a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
-            | &cross;
+            | x
+        label for="avatar_#{ava.id}"
+          - title = is_gravatar ? "loaded from gravatar" : ""
+          img.avatar src=ava.url title=title
+        input[type='radio' 
+              onchange='Rails.fire(this.form, "submit");' 
+              name='user_phone[avatar_id]' 
+              value=ava.id id="avatar_#{ava.id}"]
+  =yield :drop          
+  #big_cont
+    - @avatars.to_a[1..-1].each do |ava|
+      .avatar-container.right-cont
+        - is_gravatar = ava.url.include?("gravatar")
+        - unless is_gravatar
+          a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
+            | x
         label for="avatar_#{ava.id}"
           - title = is_gravatar ? "loaded from gravatar" : ""
           img.avatar src=ava.url title=title
