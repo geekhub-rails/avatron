@@ -34,16 +34,6 @@
 	box-shadow: inset 0px 0px 10px #fff;
 }
 
-#remove_number_button {
-	color: #EC991F;
-	background: none;
-	border: none;
-}
-
-#remove_number_button:hover {
-	color: red;
-	
-}
 
 #confirm_btn, #ok_btn, #submit_code_btn {
 	border: 2px solid white ;
@@ -124,3 +114,29 @@ ul {
 	padding: 0;
 	margin-bottom: 25px;
 }
+
+
+.profile_phone{
+	width: 60%;
+	border: 1px solid #dddddd;
+	float: left;
+	margin-bottom: 40px;
+	box-shadow: inset 0px 0px 10px #fff;
+	margin-left: 17%;
+	
+}
+.profile_remove_button{
+	margin-left: 20px;
+	border: 1px solid #dddddd;
+	float: left;
+	margin-bottom: 40px;
+	box-shadow: inset 0px 0px 10px #fff;
+	button{
+		background: none;
+		color: #ec991f;
+		border: none;
+	}
+}
+
+
+
