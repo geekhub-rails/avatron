@@ -246,8 +246,8 @@ a{
   width: 35px;
   border-right: 1px solid #dddddd;  
   img{
-    max-height: 33px;
-    max-width: 33px;
+    height: 33px;
+    width: 33px;
   }
 }
 
@@ -279,6 +279,7 @@ a{
   margin-bottom: 20px;
   height: 20px;
   padding-left: 5px;
+	box-shadow: inset 0px 0px 5px #fff;
 }
 .login{
   background:#dddddd;
@@ -333,4 +334,12 @@ a{
 
 .button-cont{
   width:50%;
+}
+
+.orange-text{
+  color: #ec991f;
+}
+.orange-border{
+  border: 1px solid #ec991f;
+  box-shadow: inset 0px 0px 10px #ec991f;
 }

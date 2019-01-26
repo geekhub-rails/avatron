@@ -10,7 +10,7 @@ div data-images=true
         - unless is_gravatar
           a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
             | x
-        label for="avatar_#{ava.id}"
+        label.big-ava-label for="avatar_#{ava.id}"
           - title = is_gravatar ? "loaded from gravatar" : ""
           img.avatar src=ava.url title=title
           input[type='radio' 
@@ -28,7 +28,7 @@ div data-images=true
         - unless is_gravatar
           a.remove href=avatar_path(ava.id) data-method="delete" data-remote=true
             | x
-        label for="avatar_#{ava.id}"
+        label.big-ava-label for="avatar_#{ava.id}"
           - title = is_gravatar ? "loaded from gravatar" : ""
           img.avatar src=ava.url title=title
           input[type='radio' 
