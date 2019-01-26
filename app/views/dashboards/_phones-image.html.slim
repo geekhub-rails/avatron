@@ -10,17 +10,16 @@
         td.phone-row
           label for="user_phone_#{phone.id}" Change
 
-.phone-picture
-  
-    - @phones.each do |phone|
-      .small-cont
-        .phone-cont.cont
-          = phone.number
-          input type=:radio name="user_phone[id]" value=phone.id id="user_phone_#{phone.id}"
-        .picture-cont.cont
-          .small-picture
-            = image_tag (phone&.avatar&.url || '/Assets/face.svg')
-        .button-cont.cont
-          .button
-            label for="user_phone_#{phone.id}" Change
+.phone-picture  
+  - @phones.each do |phone|
+    .small-cont
+      .phone-cont.cont
+        = phone.number
+        input type=:radio name="user_phone[id]" value=phone.id id="user_phone_#{phone.id}"
+      .picture-cont.cont
+        .small-picture
+          = image_tag (phone&.avatar&.url || '/Assets/face.svg')
+      .button-cont.cont
+        .button
+          label.button for="user_phone_#{phone.id}" Change
       

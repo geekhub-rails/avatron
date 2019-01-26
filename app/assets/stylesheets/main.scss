@@ -3,6 +3,7 @@ body{
   color: #dddddd; 
   font-family: FontBold;
   overflow-x: hidden;
+  min-width: 1000px;
 }
 
 @font-face {
@@ -29,6 +30,7 @@ body{
 .container{
   margin-top: 50px;
   text-align: center;
+  min-width: 400px;
   #logo{
     img{
       height: 30px;
@@ -168,15 +170,26 @@ a{
   width: 90px;
   height: 90px;
   border: 1px solid  #dddddd;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
+  box-shadow: inset 0px 0px 5px #fff;
   img{
     max-width: 87px;
     max-height: 87px;
   }
   input[type="radio"]{
     display: none;
-  }
- 
+  } 
+}
+#big_cont{
+  width: 100%;
+  text-align: left;  
+  float: left;
+  margin-top: -20px;
+  margin-bottom: 40px;
+
+}
+.down-cont{
+  margin-bottom: 20px;
 }
 
 .phone-picture{
@@ -192,11 +205,16 @@ a{
   height: 100%;
   padding-top: 3px;
 }
-.big-img-cont{
+#big-img-cont{
   float: left;
   width: 20%;
   text-align: left;
+  padding-bottom: 20px;
 }
+.right-cont{
+  margin-right: 20px;
+}
+
 .dropzone-cont{
   float: left;
   width: 80%;
@@ -204,11 +222,24 @@ a{
 #drop{
   border: 1px solid #dddddd;
   padding: 15px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   width: 100%;
+  box-shadow: inset 0px 0px 10px #dddddd;
   #smalldrop{
     border: 1px dashed #dddddd;
-    padding: 70px;
+    width: 100%;
+    background-image:url("data:image/svg+xml;utf8,
+                          <svg xmlns='http://www.w3.org/2000/svg' version='1.1'
+                          height='200px' width='500px' >
+                          <text x='85' y='85' fill='#dddddd' font-size='50' font-family='FontBold'>+</text>
+                          <text x='120' y='75' fill='#dddddd' font-size='20' font-family='Tahoma'>Add another avatar</text>
+                          <text x='100' y='100' fill='#dddddd' font-size='15'>Drag and drop or tap your image here</text>
+                          </svg>");
+    #dropzone{
+      width: 100%;
+      opacity: 0;
+      padding: 60px;
+    }
   }
 }
 
@@ -216,9 +247,10 @@ a{
   height: 35px;
   width: 35px;
   border-right: 1px solid #dddddd;  
+  box-shadow: inset 0px 0px 5px #fff;
   img{
-    max-height: 33px;
-    max-width: 33px;
+    height: 33px;
+    width: 33px;
   }
 }
 
@@ -250,6 +282,7 @@ a{
   margin-bottom: 20px;
   height: 20px;
   padding-left: 5px;
+	box-shadow: inset 0px 0px 5px #fff;
 }
 .login{
   background:#dddddd;
@@ -275,21 +308,27 @@ a{
 }
 .orange{
   border: 1px solid #ec991f;
+  box-shadow: inset 0px 0px 5px #ec991f;
 }
 .cont{
   float: left;
   height: 35px;
+  
 }
 .small-cont{
   margin-bottom: 20px;
   padding: 4px;
   overflow: hidden;
   width: 100%;
+  
 }
 .phone-cont{
   width:30%;
   border: 1px solid #dddddd;
-
+  box-shadow: inset 0px 0px 5px #fff;
+  input[type="radio"]{
+    display: none;
+  }
 }
 
 .picture-cont{
@@ -297,8 +336,21 @@ a{
   border: 1px solid #dddddd;
   border-right: none;
   border-left:none;
+  box-shadow: inset 0px 0px 5px #fff;
 }
 
 .button-cont{
   width:50%;
+  box-shadow: inset 0px 0px 5px #ec991f;
+}
+
+.orange-text{
+  color: #ec991f;
+}
+.orange-border{
+  border: 1px solid #ec991f;
+  box-shadow: inset 0px 0px 10px #ec991f;
+}
+.orange-back{
+ background-color: #ec991f;
 }
