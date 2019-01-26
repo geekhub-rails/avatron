@@ -26,4 +26,11 @@ class User < ApplicationRecord
 	    	self.confirm_token = SecureRandom.urlsafe_base64.to_s
 	   	end
    end
+
+   def confirm_new_email
+    self.update(email: self.new_email, new_email: nil)
+    self.validate_email
+    self.save(validate: false)
+  end
+
 end
