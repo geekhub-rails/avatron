@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resource :session, only: %i[new create update destroy]
+  post '/session/resend', to: 'sessions#resend_code', as: 'resend'
   root 'dashboards#show'
   get '/api/:hash', to: 'api/avatars#show'
 
