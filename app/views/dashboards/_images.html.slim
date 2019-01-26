@@ -13,10 +13,10 @@ div data-images=true
         label for="avatar_#{ava.id}"
           - title = is_gravatar ? "loaded from gravatar" : ""
           img.avatar src=ava.url title=title
-        input[type='radio' 
-              onchange='Rails.fire(this.form, "submit");' 
-              name='user_phone[avatar_id]' 
-              value=ava.id id="avatar_#{ava.id}"]   
+          input[type='radio' 
+                onchange='console.log(this); Rails.fire(this.form, "submit");' 
+                name='user_phone[avatar_id]' 
+                value=ava.id id="avatar_#{ava.id}"]   
   .dropzone-cont
     #drop
       #smalldrop
@@ -31,8 +31,8 @@ div data-images=true
         label for="avatar_#{ava.id}"
           - title = is_gravatar ? "loaded from gravatar" : ""
           img.avatar src=ava.url title=title
-        input[type='radio' 
-              onchange='Rails.fire(this.form, "submit");' 
-              name='user_phone[avatar_id]' 
-              value=ava.id id="avatar_#{ava.id}"]
+          input[type='radio' 
+                onchange='console.log(this); Rails.fire(this.form, "submit");' 
+                name='user_phone[avatar_id]' 
+                value=ava.id id="avatar_#{ava.id}"]
 

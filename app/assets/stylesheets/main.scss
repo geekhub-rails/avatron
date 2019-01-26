@@ -177,8 +177,7 @@ a{
   }
   input[type="radio"]{
     display: none;
-  }
- 
+  } 
 }
 #big_cont{
   width: 100%;
@@ -210,7 +209,6 @@ a{
   width: 20%;
   text-align: left;
   padding-bottom: 20px;
-
 }
 .right-cont{
   margin-right: 20px;
@@ -233,12 +231,12 @@ a{
                           height='200px' width='500px' >
                           <text x='85' y='85' fill='#dddddd' font-size='50' font-family='FontBold'>+</text>
                           <text x='120' y='75' fill='#dddddd' font-size='20' font-family='Tahoma'>Add another avatar</text>
-                          <text x='110' y='100' fill='#dddddd' font-size='15'>Drag and drop or tap your image here</text>
+                          <text x='100' y='100' fill='#dddddd' font-size='15'>Drag and drop or tap your image here</text>
                           </svg>");
     #dropzone{
       width: 100%;
       opacity: 0;
-      padding: 70px;
+      padding: 60px;
     }
   }
 }
@@ -321,7 +319,9 @@ a{
 .phone-cont{
   width:30%;
   border: 1px solid #dddddd;
-
+  input[type="radio"]{
+    display: none;
+  }
 }
 
 .picture-cont{
