@@ -171,6 +171,7 @@ a{
   height: 90px;
   border: 1px solid  #dddddd;
   margin-bottom: 20px; 
+  box-shadow: inset 0px 0px 5px #fff;
   img{
     max-width: 87px;
     max-height: 87px;
@@ -223,6 +224,7 @@ a{
   padding: 15px;
   margin-bottom: 20px;
   width: 100%;
+  box-shadow: inset 0px 0px 10px #dddddd;
   #smalldrop{
     border: 1px dashed #dddddd;
     width: 100%;
@@ -245,6 +247,7 @@ a{
   height: 35px;
   width: 35px;
   border-right: 1px solid #dddddd;  
+  box-shadow: inset 0px 0px 5px #fff;
   img{
     height: 33px;
     width: 33px;
@@ -305,6 +308,7 @@ a{
 }
 .orange{
   border: 1px solid #ec991f;
+  box-shadow: inset 0px 0px 5px #ec991f;
 }
 .cont{
   float: left;
@@ -316,10 +320,12 @@ a{
   padding: 4px;
   overflow: hidden;
   width: 100%;
+  
 }
 .phone-cont{
   width:30%;
   border: 1px solid #dddddd;
+  box-shadow: inset 0px 0px 5px #fff;
   input[type="radio"]{
     display: none;
   }
@@ -330,10 +336,12 @@ a{
   border: 1px solid #dddddd;
   border-right: none;
   border-left:none;
+  box-shadow: inset 0px 0px 5px #fff;
 }
 
 .button-cont{
   width:50%;
+  box-shadow: inset 0px 0px 5px #ec991f;
 }
 
 .orange-text{
@@ -342,4 +350,7 @@ a{
 .orange-border{
   border: 1px solid #ec991f;
   box-shadow: inset 0px 0px 10px #ec991f;
+}
+.orange-back{
+ background-color: #ec991f;
 }
