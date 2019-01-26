@@ -7,6 +7,7 @@
 	color: #4E6472;
 	background-color: #102F44;
 	border: none;
+	margin: 20px;
 }
 
 #add_number_btn {
@@ -19,6 +20,7 @@
 	position: relative;
 	border: 2px solid #fff;
 	box-shadow: 0px 0px 10px #fff;
+	margin: 10px;
 }
 
 #add_number_btn::after {
@@ -33,9 +35,14 @@
 }
 
 #remove_number_button {
-	color: red;
+	color: #EC991F;
 	background: none;
 	border: none;
+}
+
+#remove_number_button:hover {
+	color: red;
+	
 }
 
 #confirm_btn, #ok_btn, #submit_code_btn {
@@ -55,9 +62,10 @@
 }
 
 #user_email {
-	width: 45%;
+	width: 52%;
 	height: 100%;
-	margin: 25px;
+	margin-top: 35px;
+	margin-bottom: 20px;
 	padding: 3px 10px;
 	border: 1px solid  #dddddd;
 }
@@ -77,6 +85,13 @@
 
 ul {
   list-style-type: none;
+  li:before {
+  	content: "\f095"; /* FontAwesome Unicode */
+  	font-family: FontAwesome;
+  	display: inline-block;
+  	margin-left: -1.3em; /* same as padding-left set on li */
+  	width: 1.5em; /* same as padding-left set on li */
+}
 }
 
 #new_user_phone {
@@ -107,4 +122,5 @@ ul {
 
 #user_phones {
 	padding: 0;
+	margin-bottom: 25px;
 }
