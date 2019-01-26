@@ -16,8 +16,11 @@ div data-images=true
         input[type='radio' 
               onchange='Rails.fire(this.form, "submit");' 
               name='user_phone[avatar_id]' 
-              value=ava.id id="avatar_#{ava.id}"]
-  =yield :drop          
+              value=ava.id id="avatar_#{ava.id}"]   
+  .dropzone-cont
+    #drop
+      #smalldrop
+        input#dropzone type=:file accept='image/*' name='file'      
   #big_cont
     - @avatars.to_a[1..-1].each do |ava|
       .avatar-container.right-cont

@@ -183,6 +183,9 @@ a{
 #big_cont{
   width: 100%;
   text-align: left;  
+  float: left;
+  margin-top: -20px;
+  margin-bottom: 40px;
 
 }
 .down-cont{
@@ -212,6 +215,7 @@ a{
 .right-cont{
   margin-right: 20px;
 }
+
 .dropzone-cont{
   float: left;
   width: 80%;
@@ -219,7 +223,7 @@ a{
 #drop{
   border: 1px solid #dddddd;
   padding: 15px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   width: 100%;
   #smalldrop{
     border: 1px dashed #dddddd;
@@ -306,6 +310,7 @@ a{
 .cont{
   float: left;
   height: 35px;
+  
 }
 .small-cont{
   margin-bottom: 20px;
