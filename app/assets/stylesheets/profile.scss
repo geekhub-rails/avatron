@@ -21,6 +21,7 @@
 	border: 2px solid #fff;
 	box-shadow: 0px 0px 10px #fff;
 	margin: 10px;
+	margin-top: 40px;
 }
 
 #add_number_btn::after {
@@ -75,13 +76,13 @@
 
 ul {
   list-style-type: none;
-  li:before {
-  	content: "\f095"; /* FontAwesome Unicode */
+ /* li:before {
+  	content: "\f095";  FontAwesome Unicode 
   	font-family: FontAwesome;
   	display: inline-block;
-  	margin-left: -1.3em; /* same as padding-left set on li */
-  	width: 1.5em; /* same as padding-left set on li */
-}
+  	margin-left: -1.3em; 
+		width: 1.5em;
+ }*/
 }
 
 #new_user_phone {
@@ -115,21 +116,20 @@ ul {
 	margin-bottom: 25px;
 }
 
-
 .profile_phone{
 	width: 60%;
 	border: 1px solid #dddddd;
 	float: left;
-	margin-bottom: 40px;
+	margin-top: 40px;
 	box-shadow: inset 0px 0px 10px #fff;
 	margin-left: 17%;
-	
+
 }
 .profile_remove_button{
 	margin-left: 20px;
 	border: 1px solid #dddddd;
 	float: left;
-	margin-bottom: 40px;
+	margin-top: 40px;
 	box-shadow: inset 0px 0px 10px #fff;
 	button{
 		background: none;
@@ -137,6 +137,19 @@ ul {
 		border: none;
 	}
 }
+.not_confirmed{
+	width: 70%;
+	margin-left: 17%;
+	text-align: left;
+	float: left;
+	color:#ec991f;
+}
 
-
+.confirm_new_phone_btn{
+	border: none;
+	background: #ec991f;
+}
+.profile_phone_cont{
+	margin-top: -40px;
+}
 
