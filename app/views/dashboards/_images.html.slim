@@ -22,7 +22,7 @@ div data-images=true
       #smalldrop
         input#dropzone type=:file accept='image/*' name='file'      
   #big_cont
-    - @avatars.to_a[1..-1].each do |ava|
+    - @avatars.to_a[1..-1].to_a.each do |ava|
       .avatar-container.right-cont
         - is_gravatar = ava.url.include?("gravatar")
         - unless is_gravatar
