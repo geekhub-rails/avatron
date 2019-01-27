@@ -26,7 +26,7 @@
 
 #add_number_btn::after {
 	content: "";
-	position: absolute;
+
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -34,9 +34,39 @@
 	z-index: -1;
 	box-shadow: inset 0px 0px 10px #fff;
 }
+.profile_page_cont{
+	.string{
+		border: none;
+		box-shadow: none;
+	input{
+		border: 1px solid #ec991f;
+		width: 30%;
+		box-shadow: inset 0px 0px 10px  #ec991f;
+	}
+	}
+}
+.profile_page_cont{
+	.string{
+		border: none;
+		box-shadow: none;
+	input{
+		border: 1px solid #ec991f;
+		width: 30%;
+		box-shadow: inset 0px 0px 10px  #ec991f;
+	}
+	}
+}
+
+.enter_code_confirm{
+	.edit_user_phone{
+		float: left;
+    width: 100%;
+    margin-top: 20px;
+	}
+}
 
 
-#confirm_btn, #ok_btn, #submit_code_btn {
+#ok_btn, #submit_code_btn {
 	border: 2px solid white ;
 	box-sizing: border-box;
 	background-color: white;
@@ -101,10 +131,7 @@ ul {
 	padding-bottom: 20px;
 }*/
 
-#user_phone_number {
-	width: 25%;
-	border: 1px solid  #dddddd;
-}
+
 
 #user_phone_code {
 	width: 25%;

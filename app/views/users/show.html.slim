@@ -1,13 +1,13 @@
 
 h1= t(:profile_page)
+.profile_page_cont
+	ul#user_phones
+		= render partial: 'phone_numbers/phone_number', collection: @user.phones
 
-ul#user_phones
-  = render partial: 'phone_numbers/phone_number', collection: @user.phones
+	#user_phone_form
+		button data-url=new_phone_number_path data-remote=true id='add_number_btn' ➕ Add another phone number
 
-#user_phone_form
-	button data-url=new_phone_number_path data-remote=true id='add_number_btn' ➕ Add another phone number
+	div#user_email_style
+		= render 'edit'
 
-div#user_email_style
-	= render 'edit'
-
-= button_to t(:remove_acc), '/profile', method: "delete", remote: true, data: {confirm: 'Are you sure?'}, id: 'remove_account_btn'
+	= button_to t(:remove_acc), '/profile', method: "delete", remote: true, data: {confirm: 'Are you sure?'}, id: 'remove_account_btn'
