@@ -1,7 +1,11 @@
-li data-phone-id=phone_number.id
-  / => phone_number.number if phone_number.confirmed?
-  => phone_number.number
-  button data-url=phone_number_path(phone_number) data-method=:delete data-remote=true X
-  = t(:not_confirmed) unless phone_number.confirmed?
-  / button data-url=phone_number_path(phone_number) data-method=:patch data-remote=true Confirm
-  = button_to t(:confirm), confirm_phone_number_path(phone_number), method: "get", remote: true unless phone_number.confirmed?
+.profile_phone_cont
+  li id=phone_number.id
+    .profile_phone
+      => phone_number.number
+    .profile_remove_button
+      button data-url=phone_number_path(phone_number) data-method=:delete data-remote=true id='remove_number_button' X
+    -unless phone_number.confirmed?
+      .not_confirmed
+        = t(:not_confirmed) 
+        = button_to t(:confirm), confirm_phone_number_path(phone_number), method: "get", remote: true, class: "confirm_new_phone_btn" unless phone_number.confirmed?
+  
