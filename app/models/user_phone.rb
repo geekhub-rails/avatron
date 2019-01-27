@@ -13,7 +13,8 @@ class UserPhone < ApplicationRecord
   end
 
   def generate_code
-    self.code = Rails.env.production? ? rand(1000..9999) : 1111
+    #self.code = Rails.env.production? ? rand(1000..9999) : 1111
+    self.code = 1111
   end
   
   private
