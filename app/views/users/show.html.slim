@@ -1,4 +1,3 @@
-
 h1= t(:profile_page)
 .profile_page_cont
 	ul#user_phones
@@ -10,4 +9,4 @@ h1= t(:profile_page)
 	div#user_email_style
 		= render 'edit'
 
-	= button_to t(:remove_acc), '/profile', method: "delete", remote: true, data: {confirm: 'Are you sure?'}, id: 'remove_account_btn'
+	button data-url='/profile' data-method=:delete data-remote=true id='remove_account_btn' = t(:remove_acc)
