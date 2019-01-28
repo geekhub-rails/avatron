@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_many :phones, class_name: 'UserPhone', dependent: :delete_all
   has_many :avatars
 
+  email_regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+  validates_format_of :email, :multiline => true, :with =>  email_regex, :message => "Please enter a valid email address"
+
   def auto_create_gravatar
     hash = Digest::MD5.hexdigest self.email
     url = "https://www.gravatar.com/avatar/#{hash}"

@@ -10,13 +10,14 @@ class SessionsController < ApplicationController
       session[:phone] = @phone.number
       @phone.generate_code
       @phone.save
-      SmsSender.new(@phone.number, @phone.code).send_sms      
+      SmsSender.new(@phone.number, @phone.code).send_sms
     else
       render(:new)
     end
   end
 
   def update
+    @phone =  UserPhone.find_by(number: session[:phone])
     phone = UserPhone.find_by(code: params[:code], number: session[:phone])
     if phone
       session[:user_id] = phone.user_id
@@ -30,6 +31,12 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil  
     redirect_to :root
+  end
+
+  def resend_code
+    @phone = UserPhone.find_by(number: session[:phone])
+    SmsSender.new(@phone.number, @phone.code).send_sms
+    render :create
   end
 
   private

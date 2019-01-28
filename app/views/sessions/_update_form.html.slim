@@ -1,14 +1,24 @@
 = simple_form_for '', url: session_path, method: :patch, remote: true do |f|
+  - if locals[:error]
+    p.error-message
+      = locals[:error]
   .row
     .col-sm-1
     .col-sm-2
       .login.phone-text
         | Code
-    .col-sm-8 
-        input class="string required orange" required="required" aria-required="true" type="text" name="code" id="code"
+    .col-sm-8
+      input class="string required orange" required="required" aria-required="true" type="text" name="code" id="code"
     .col-sm-1
   .row
     .col-sm-1
     .col-sm-10
       = f.submit :CONFIRM, class: 'confirm-login-btn'
     .col-sm-1
+= simple_form_for 'resend', url: resend_path, method: :post, remote: true do |f|
+  .row
+    .col-sm-1
+    .col-sm-10
+      = f.submit 'Resend', class: 'resend-code-btn'
+    .col-sm-1
+
