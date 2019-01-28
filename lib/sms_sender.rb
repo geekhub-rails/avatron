@@ -16,6 +16,7 @@ class SmsSender
 
   def send_sms
     return unless Rails.env.production?
+    return false
     uri = URI.parse('http://svitsms.com/api/api.php')
     phone = @recipient
     text = @text
