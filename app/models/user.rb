@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :avatars
 
   email_regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
-  validates_format_of :email, :multiline => true, :with =>  email_regex, :message => "Please enter a valid email address"
+  validates_format_of :email, multiline: true, with: email_regex, message: "Please enter a valid email address", allow_blank: true
 
   def auto_create_gravatar
     hash = Digest::MD5.hexdigest self.email
@@ -19,18 +19,18 @@ class User < ApplicationRecord
   end
   # private
 
-	  def validate_email
-	    self.email_confirmed = true
-	    self.confirm_token = nil
-	  end
+  def validate_email
+    self.email_confirmed = true
+    self.confirm_token = nil
+  end
 
-	  def set_confirmation_token
-	    if self.confirm_token.blank?
-	    	self.confirm_token = SecureRandom.urlsafe_base64.to_s
-	   	end
-   end
+  def set_confirmation_token
+    if self.confirm_token.blank?
+      self.confirm_token = SecureRandom.urlsafe_base64.to_s
+    end
+  end
 
-   def confirm_new_email
+  def confirm_new_email
     self.update(email: self.new_email, new_email: nil)
     self.validate_email
     self.save(validate: false)
