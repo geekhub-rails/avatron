@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @phone = UserPhone.find_by(number: phone_params[:number])
+    @phone = UserPhone.find_by(number: phone_params[:number], code: nil)
     @phone ||= UserPhone.create(phone_params)
     if @phone.valid?
       session[:phone] = @phone.number

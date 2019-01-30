@@ -42,11 +42,11 @@ html
         -if current_user
           .nav
             a href=  root_path 
-              | Home
+              = t(:home)
             a href= show_profile_path 
-              | Profile
+              = t(:profile)
             a href= session_path data-method="delete"
-              | Logout
+              = t(:logout)
 
     #modal-window.modal.hide.fade aria-hidden="true" role="dialog"
     #overlay

@@ -13,6 +13,7 @@ class PhoneNumbersController < ApplicationController
 
   def updates
     @phones = current_user.phones.order(:id)
+    #@phones = confirmed_phones
     return unless user_phone
     user_phone.update(phone_params)
   end

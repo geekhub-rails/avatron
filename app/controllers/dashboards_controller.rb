@@ -5,12 +5,12 @@ class DashboardsController < ApplicationController
   def show
     @user = current_user
     @avatars = current_user.avatars
-    @phones = current_user.phones
+    @phones = confirmed_phones
     @user.auto_create_gravatar
   end
 
   def update_image
-    current_user.phones.each do |phone|
+    confirmed_phones.each do |phone|
       phone.attach(params[:button])
     end
   end
