@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Welcome to Avatron!</h2>
+    <p>
+      We're so happy you're here. We hope you confirm your email. To confirm your email
+      <br>
+      Just follow this link:
+      <%=  link_to "confirm", confirm_email_url(@user.confirm_token, host: "http://localhost:3000")%>
+    </p>
+    <p>Thanks for using Avatron and have a great day!</p>
+  </body>
+</html>

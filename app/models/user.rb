@@ -16,6 +16,7 @@ class User < ApplicationRecord
         grava.update(url: url)
       end
     end
+    self.update(new_email: self.email, email: nil) 
   end
   # private
 
