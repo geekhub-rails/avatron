@@ -38,7 +38,7 @@ class PhoneNumbersController < ApplicationController
 
   def destroy
     @phone_number = current_user.phones.find_by(id: params[:id])
-    @phone_number.destroy
+    @phone_number.destroy if current_user.phones.count > 1
   end
 
   def phone_params
