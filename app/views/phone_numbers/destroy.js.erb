@@ -1,1 +1,5 @@
-$('[id=<%= @phone_number.id %>]').remove();
+phones = $('.profile_phone_cont')
+phones_count = phones.length
+if (phones_count > 1) {
+	$('[id=<%= @phone_number.id %>]').remove();
+}
