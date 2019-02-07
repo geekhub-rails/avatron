@@ -30,12 +30,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  edit_email: "Edit email"
-  add_phone: "➕ Add another phone number"
-  remove_acc: "Remove account"
-  profile_page: "YOUR PROFILE"
-  profile: "Profile"
-  confirm: "Confirm"
-  not_confirmed: "Number is not confirmed"
+  hello: 'Hello world'
+  edit_email: 'Edit email'
+  add_phone: '➕ Add another phone number'
+  remove_acc: 'Remove account'
+  profile_page: 'YOUR PROFILE'
+  profile: 'Profile'
+  confirm: 'Confirm'
+  not_confirmed: 'Number is not confirmed'
+  change: 'Change'
+  home: 'Home'
+  profile: 'Profile'
+  logout: 'Logout'
   

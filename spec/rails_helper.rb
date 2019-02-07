@@ -77,4 +77,17 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  def login_user_and_visit_profile
+    visit root_path
+    find('#user_phone_number').set('380631111111')
+    find('input[type="submit"]').click
+    sleep 1
+    expect(page.body).to include('Code')
+    find('#code').set('1111')
+    find('input[value="CONFIRM"]').click
+    sleep 1
+    expect(page.body).to include('DASHBOARD')
+    visit 'profile'
+  end
 end

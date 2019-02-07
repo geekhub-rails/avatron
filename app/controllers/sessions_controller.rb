@@ -4,13 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @phone = UserPhone.find_by(number: phone_params[:number])
+    @phone = UserPhone.find_by(number: phone_params[:number], code: nil)
     @phone ||= UserPhone.create(phone_params)
     if @phone.valid?
       session[:phone] = @phone.number
       @phone.generate_code
       @phone.save
       SmsSender.new(@phone.number, @phone.code).send_sms
+      send_welcome_email unless phone_params[:user_attributes][:email].blank?
     else
       render(:new)
     end
@@ -51,6 +52,14 @@ class SessionsController < ApplicationController
   helper_method :number
 
   def user_params
-  params.fetch(:user, {}).permit(:email, phones_attributes: [:number])
-end
+    params.fetch(:user, {}).permit(:email, phones_attributes: [:number])
+  end
+
+  def send_welcome_email
+    @user = User.find_by(email: phone_params[:user_attributes][:email])
+    @user.set_confirmation_token
+    @user.save
+    UserMailer.welcome_email(@user).deliver_now unless @user.blank?
+    @user.update(new_email: @user.email, email: nil)
+  end
 end
