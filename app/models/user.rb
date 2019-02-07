@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates_format_of :email, multiline: true, with: email_regex, message: "Please enter a valid email address", allow_blank: true
 
   def auto_create_gravatar
-    hash = Digest::MD5.hexdigest self.email
+    hash = Digest::MD5.hexdigest self.email if self.email
     url = "https://www.gravatar.com/avatar/#{hash}"
     unless self.email.blank?
       unless self.avatars.where("url like ?", "%gravatar%").exists?
@@ -16,7 +16,6 @@ class User < ApplicationRecord
         grava.update(url: url)
       end
     end
-    self.update(new_email: self.email, email: nil) 
   end
   # private
 

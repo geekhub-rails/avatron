@@ -60,5 +60,6 @@ class SessionsController < ApplicationController
     @user.set_confirmation_token
     @user.save
     UserMailer.welcome_email(@user).deliver_now unless @user.blank?
+    @user.update(new_email: @user.email, email: nil)
   end
 end
