@@ -42,4 +42,5 @@ en:
   home: 'Home'
   profile: 'Profile'
   logout: 'Logout'
-  
+  email_not_confirmed: 'Please confirm your email'
+  email_not_confirmed_dash: 'Please confirm your email to use your Gravatar image'
