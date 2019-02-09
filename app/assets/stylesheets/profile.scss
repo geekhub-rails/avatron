@@ -67,7 +67,7 @@
 	.edit_user_phone{
 		float: left;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
 	}
 }
 
@@ -77,16 +77,8 @@
 	background-color: white;
 	color: #102F44;
 	padding: 0 20px;
-}
-
-#ok_btn {
 	display: flex;
-	margin-left: 70%;
-}
-
-#submit_code_btn {
-	display: flex;
-	margin-left: 70%;
+	margin-left: 45%;
 }
 
 #user_email {
@@ -139,8 +131,19 @@ ul {
 }*/
 
 #user_phone_code {
-	width: 25%;
+	display: flex;
+	height: 20px;
 	border: 1px solid  #dddddd;
+	border: 1px solid #ec991f;
+  /*width: 30%;*/
+  box-shadow: inset 0px 0px 10px #ec991f;
+  margin-left: 35%;
+}
+
+#user_phone_number {
+	border: 1px solid #ec991f;
+  box-shadow: inset 0px 0px 10px #ec991f;
+	height: 20px;
 }
 
 #user_phones {
@@ -168,6 +171,9 @@ ul {
 		background: none;
 		color: #ec991f;
 		border: none;
+	}
+	button:hover {
+		color: red;
 	}
 }
 
